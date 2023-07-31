@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2c491aac-29dd-4d00-9d2a-67121dc66889">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     data_jemaatgereja.`ID_jemaat` AS data_jemaatgereja_ID_jemaat,
+     data_jemaatgereja.`nma_Baptis` AS data_jemaatgereja_nma_Baptis,
+     data_jemaatgereja.`nama` AS data_jemaatgereja_nama,
+     data_jemaatgereja.`tmp_lahir` AS data_jemaatgereja_tmp_lahir,
+     data_jemaatgereja.`tgllahir` AS data_jemaatgereja_tgllahir,
+     data_jemaatgereja.`jenis_kelamin` AS data_jemaatgereja_jenis_kelamin,
+     data_jemaatgereja.`status` AS data_jemaatgereja_status,
+     data_jemaatgereja.`tmp_baptis` AS data_jemaatgereja_tmp_baptis,
+     data_jemaatgereja.`tglbaptis` AS data_jemaatgereja_tglbaptis,
+     data_jemaatgereja.`pendidikan` AS data_jemaatgereja_pendidikan,
+     data_jemaatgereja.`pekerjaan` AS data_jemaatgereja_pekerjaan,
+     data_jemaatgereja.`lingkungan2` AS data_jemaatgereja_lingkungan2,
+     data_jemaatgereja.`alamat` AS data_jemaatgereja_alamat
+FROM
+     `data_jemaatgereja` data_jemaatgereja
+
+where ID_jemaat = $P{id}]]>
+	</queryString>
+	<field name="data_jemaatgereja_ID_jemaat" class="java.lang.String"/>
+	<field name="data_jemaatgereja_nma_Baptis" class="java.lang.String"/>
+	<field name="data_jemaatgereja_nama" class="java.lang.String"/>
+	<field name="data_jemaatgereja_tmp_lahir" class="java.lang.String"/>
+	<field name="data_jemaatgereja_tgllahir" class="java.lang.String"/>
+	<field name="data_jemaatgereja_jenis_kelamin" class="java.lang.String"/>
+	<field name="data_jemaatgereja_status" class="java.lang.String"/>
+	<field name="data_jemaatgereja_tmp_baptis" class="java.lang.String"/>
+	<field name="data_jemaatgereja_tglbaptis" class="java.lang.String"/>
+	<field name="data_jemaatgereja_pendidikan" class="java.lang.String"/>
+	<field name="data_jemaatgereja_pekerjaan" class="java.lang.String"/>
+	<field name="data_jemaatgereja_lingkungan2" class="java.lang.String"/>
+	<field name="data_jemaatgereja_alamat" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="196" splitType="Stretch">
+			<image>
+				<reportElement x="12" y="12" width="100" height="100" uuid="5349cdf9-34ae-491c-a5e4-ed199090b976"/>
+				<imageExpression><![CDATA["C:\\Users\\oscar\\Documents\\NetBeansProjects\\Gerejaproject\\src\\Laporan\\Logo_keuskupan_pontianak.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="693" y="12" width="100" height="100" uuid="3e93b82e-5dcb-4632-aea7-9ee2116a9bb1"/>
+				<imageExpression><![CDATA["C:\\Users\\oscar\\Documents\\NetBeansProjects\\Gerejaproject\\src\\Laporan\\Logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="270" y="0" width="247" height="36" uuid="19c36f6d-8ef3-449a-8167-a44e032605db"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KARTU KELUARGA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="112" width="245" height="20" uuid="ff1572e0-e711-4372-bc67-d17c219d7751"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KEUSKUPAN AGUNG PONTIANAK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="517" y="38" width="176" height="20" uuid="fe2dbf45-c539-43a6-ae71-10babefaeb16"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Paroki : Pakumbang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="517" y="56" width="176" height="20" uuid="2373485c-eabb-4f55-b7f9-34d637d3ad79"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gereja : Santo Fransiskus Asisi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="331" y="38" width="52" height="18" uuid="57164e5b-e839-4e46-9e95-069252030528"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No KK :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="383" y="38" width="95" height="18" uuid="a1b77fd1-e157-44ea-a555-98d9f7f375b9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_jemaatgereja_ID_jemaat}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="305" y="112" width="89" height="20" uuid="cc962b37-8738-469a-9550-64063ecf2522"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Wilayah	:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="132" width="89" height="20" uuid="2b7c55ef-244a-4165-9f43-a037d4e623ce"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Lingkungan 	:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="394" y="112" width="100" height="20" uuid="acc75742-6c20-425b-911c-e794f7e99438"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Paroki Pakumbang]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="394" y="132" width="100" height="20" uuid="42f4d65b-ad51-4f9f-a8cd-388f45a21200"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_jemaatgereja_lingkungan2}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="162" width="800" height="1" uuid="fca8d6f0-ffeb-4ba1-a987-9fc4f2d16481"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="657" y="112" width="136" height="18" uuid="254f5ffb-68dc-43b2-97ec-d4b569640a7c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_jemaatgereja_alamat}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="610" y="112" width="47" height="18" forecolor="#000000" uuid="dc49734f-9375-4834-8a2d-b5df81309e18"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Alamat : ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="56" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="12" y="0" width="187" height="18" forecolor="#000000" uuid="497dd0cc-6b51-4892-aff1-9d209d386fba"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Baptis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="12" y="18" width="187" height="18" forecolor="#000000" uuid="8eabc78a-737b-4005-8f8b-5a37a025d9c8"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="331" y="0" width="174" height="18" forecolor="#000000" uuid="13c91089-296f-4987-beb6-99cff2551585"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tempat Lahir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="331" y="18" width="174" height="18" forecolor="#000000" uuid="0408822d-2228-4497-ac25-7d6289f6c401"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tanggal Lahir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="199" y="18" width="132" height="18" forecolor="#000000" uuid="ce14e8ea-2455-4250-82c2-eb3d02c1175f"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Jenis Kelamin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="199" y="0" width="132" height="18" forecolor="#000000" uuid="5a21a0c8-42c8-40b8-989b-1a2d983fdc17"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hubungan Keluarga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="621" y="0" width="172" height="18" forecolor="#000000" uuid="fe0373e9-b41a-4080-9c0b-598040cbb9f0"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tempat Baptis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="621" y="18" width="172" height="18" forecolor="#000000" uuid="2a495b4b-eec5-49f5-a964-7b849312cd1e"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tanggal Baptis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="505" y="0" width="116" height="18" forecolor="#000000" uuid="f36847e2-a8bf-4407-81b3-bb463bd3cd4d"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pendidikan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="505" y="18" width="116" height="18" forecolor="#000000" uuid="4863e175-8592-4fa1-b29a-4b4ab46881d9"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Pekerjaan]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="46" width="802" height="1" uuid="882125e8-aabb-4348-8aa8-cf9f867f8de9"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="47" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="797" height="18" uuid="8eadd72b-5d28-42cd-a4c5-c91cc5188fcc"/>
+				<rectangle>
+					<reportElement x="2" y="0" width="197" height="18" uuid="f6d6a697-1f4c-4853-a7e9-e8ccdf8f0b9e"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="2" y="0" width="197" height="18" uuid="a10966e2-e87a-4eb1-a141-ade5165d7dd3"/>
+					<textElement textAlignment="Center">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{data_jemaatgereja_nma_Baptis}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="621" y="0" width="176" height="18" uuid="26e418ea-2e06-41a6-b1ed-d7400ea23844"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="621" y="0" width="176" height="18" uuid="84905eb2-4ff8-473d-b68c-4ef8906ae468"/>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{data_jemaatgereja_tmp_baptis}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="2" y="18" width="197" height="18" uuid="145474c0-5895-43f7-815d-d746de2c6117"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_jemaatgereja_nama}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="199" y="18" width="132" height="18" uuid="9406d01c-a658-426d-9183-e8545f384adf"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_jemaatgereja_jenis_kelamin}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="331" y="18" width="174" height="18" uuid="40d4658c-4b67-41e6-8134-5706ba3fc67c"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_jemaatgereja_tgllahir}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="505" y="18" width="116" height="18" uuid="0d851537-be9b-4602-90c1-024a14c3abdb"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_jemaatgereja_pekerjaan}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="621" y="18" width="181" height="18" uuid="3c5eddd9-c299-40c6-9c93-0f3cc77eff52"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_jemaatgereja_tglbaptis}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="199" y="0" width="132" height="18" uuid="12ec2af0-0ade-4c08-87c7-df9433ef59bf"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="199" y="2" width="132" height="16" uuid="c5e191c5-078c-4a02-9928-895489802499"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_jemaatgereja_status}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="331" y="0" width="174" height="18" uuid="71ed8fc3-d583-4d1b-85c9-232e031793b7"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="331" y="2" width="174" height="16" uuid="9eebbf2f-1eb6-47b2-8844-33d89a2197f5"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_jemaatgereja_tmp_lahir}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="505" y="0" width="116" height="18" uuid="7b37ce87-6c57-4982-a0d7-31b3efaa52fa"/>
+			</rectangle>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" positionType="Float" x="505" y="2" width="116" height="18" uuid="3d95d399-952d-4b90-a12c-5135930fbd8d"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_jemaatgereja_pendidikan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="58" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="0513c794-f1c3-43d7-8baa-9ea07d65d939"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="5" width="169" height="20" uuid="cfce395a-7ecb-4ff9-8e12-97bbf3698417"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
